@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "template_version": 0
+  },
+  "fixtures": [
+    {
+      "name": "freelancer_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Freelancer",
+        "description": "The essentials to provide your best work for clients.",
+        "metadata": {
+          "features": "[\"5 products\", \"Up to 1,000 subscribers\", \"Basic analytics\", \"48-hour support response time\"]"
+        }
+      }
+    },
+    {
+      "name": "freelancer_monthly_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${freelancer_product:id}",
+        "unit_amount": 2400,
+        "recurring": {
+          "interval": "month"
+        },
+        "lookup_key": "freelancer",
+        "transfer_lookup_key": true,
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "freelancer_annual_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${freelancer_product:id}",
+        "unit_amount": 24000,
+        "recurring": {
+          "interval": "year"
+        },
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "startup_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Startup",
+        "description": "A plan that scales with your rapidly growing business.",
+        "metadata": {
+          "features": "[\"25 products\", \"Up to 10,000 subscribers\", \"Advanced analytics\", \"24-hour support response time\", \"Marketing automations\"]",
+          "most_popular": true
+        }
+      }
+    },
+    {
+      "name": "startup_monthly_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${startup_product:id}",
+        "unit_amount": 3200,
+        "recurring": {
+          "interval": "month"
+        },
+        "lookup_key": "startup",
+        "transfer_lookup_key": true,
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "startup_annual_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${startup_product:id}",
+        "unit_amount": 32000,
+        "recurring": {
+          "interval": "year"
+        },
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "enterprise_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Enterprise",
+        "description": "Dedicated support and infrastructure for your company.",
+        "metadata": {
+          "features": "[\"Unlimited products\", \"Unlimited subscribers\", \"Advanced analytics\", \"1-hour, dedicated support response time\", \"Marketing automations\", \"Custom integrations\"]"
+        }
+      }
+    },
+    {
+      "name": "enterprise_monthly_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${enterprise_product:id}",
+        "unit_amount": 4800,
+        "recurring": {
+          "interval": "month"
+        },
+        "lookup_key": "enterprise",
+        "transfer_lookup_key": true,
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "enterprise_annual_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${enterprise_product:id}",
+        "unit_amount": 48000,
+        "recurring": {
+          "interval": "year"
+        },
+        "tax_behavior": "exclusive"
+      }
+    }
+  ]
+}
