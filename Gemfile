@@ -67,3 +67,15 @@ group :development do
   # gem "spring"
 end
 
+
+gem "devise", "~> 4.8"
+
+gem "resque", "~> 2.2"
+
+gem "letter_opener", "~> 1.7", :group => :development
+
+gem "pay", "~> 3.0"
+
+gem "stripe", "~> 5.42"
+
+gem "receipts", "~> 1.1"
